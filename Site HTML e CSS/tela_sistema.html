@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/Style-telasistema.css" />
+    <title>Sistema</title>
+
+    <script>
+      // função do botão sair
+      function logout() {
+        if (confirm("Deseja sair?")) {
+          window.location.href = "tela_login.php";
+        }
+      }
+
+      var credito = document.getElementById("credito").value;
+      if (credito === "" || isNaN(credito)) {
+        alert("Digite um valor válido!");
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <img src="assets/imagens/LOGO-FACE-PASS.png" alt="" />
+      <h1>Seja bem vindo(a)</h1>
+
+      <form action="">
+        <label for="credito">
+          <span>Adicionar Créditos</span>
+          <input type="number" id="credito" name="name" step="any" required />
+        </label>
+
+        <label for="password">
+          <span>Senha</span>
+          <input type="password" id="password" name="password" required />
+
+          <label for="credito">Forma de Pagamento*</label>
+          <input type="text" list="opcoes" required />
+          <datalist id="opcoes">
+            <option value="Pix"></option>
+            <option value="Boleto"></option>
+            <option value="Cartão de Crédito"></option>
+            <option value="Cartão de Débito"></option>
+          </datalist>
+        </label>
+        <input type="submit" value="Confirmar" />
+      </form>
+    </main>
+
+    <section class="images">
+      <h2 class="slogan">Informações do Usuário</h2>
+      <img src="assets/imagens/Mulher.jpg" alt="Foto usuário" />
+      <!--FOTO DO USUARIO-->
+      <div class="info-usuario">
+        <p>Usuário: Ana</p>
+        <p>Email: ana@gmail.com</p>
+        <p id="credit">Seus créditos: R$ 30,00</p>
+        <input type="file" id="fileInput" style="display: none" />
+
+        <button id="changeImageButton">Trocar foto</button>
+
+        <button id="changeImageButton">
+          <a href="atualizar_cadastro.html">Atualizar Cadastro</a>
+        </button>
+      </div>
+      <div class="circle"></div>
+    </section>
+
+    <button class="botao-sair" onclick="logout()">Sair</button>
+  </body>
+</html>
